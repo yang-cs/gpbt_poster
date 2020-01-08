@@ -12,8 +12,7 @@ import os, os.path as path
 KW_IMG_COUNT = 20
 # 下载图片时的超时设置，默认为 5 秒。
 REQ_TIME_OUT = 5
-MY_FONTS = ["C:\\WINDOWS\\Fonts\\SIMYOU.TTF","C:\\WINDOWS\\Fonts\\SIMYOU.TTF",
-            "C:\\WINDOWS\\Fonts\\SIMYOU.TTF","C:\\WINDOWS\\Fonts\\SIMHEI.TTF"]
+MY_FONTS = ["C:\\WINDOWS\\Fonts\\SIMYOU.TTF","C:\\WINDOWS\\Fonts\\SIMHEI.TTF"]
 
 ''' 将关键词拆开后分别搜索相关图片，并以 关键词:图片列表 的形式存入字典并返回 '''
 def get_all_image_urls(key_words):
