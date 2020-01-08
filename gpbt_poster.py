@@ -4,12 +4,12 @@ import re
 import time
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
-from random import sample,randint,random
+from random import sample,randint
 import os, os.path as path
 
 
 # 素材库大小，即为每个关键字所下载的图片数量，越多选择越大、但下载时间越长。
-KW_IMG_COUNT = 10
+KW_IMG_COUNT = 20
 # 下载图片时的超时设置，默认为 5 秒。
 REQ_TIME_OUT = 5
 MY_FONTS = ["C:\\WINDOWS\\Fonts\\SIMYOU.TTF","C:\\WINDOWS\\Fonts\\SIMYOU.TTF",
@@ -157,14 +157,18 @@ def main(key_words, count, root_dir):
 
         save_path = f'{root_dir}\\{"".join(key_words.split())}{str(time.time())[-6:]}\\'
         os.mkdir(save_path)
+        print(f'现在开始将所有图片导出到 {save_path} 文件夹：')
         for i in range(len(posters)):        
             try:
                 posters[i].save( f'{save_path}\\{i}.png')        
             except Exception as e:
                 print(f'因为图片格式等原因，保存第 {i} 张图片时异常，自动跳过：{e}')
+        print('导出结束，请领导御览。')        
 
     except Exception as e:
        print('好像有点问题，你自己查吧，本狗歇会。\n', e)
+
+
 
 if __name__ == "__main__":
         key_words = input('请输入主题词，用空格分隔：')
